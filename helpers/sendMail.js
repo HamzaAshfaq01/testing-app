@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { errorHandler } = require('../helpers/dbErrorHandling');
 
 const SendMail = (options,res) => {
 	const transporter = nodemailer.createTransport({
