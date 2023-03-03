@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: 'https://full-mern-authentication.netlify.app'
   })
 );
 app.use(morgan("dev"));
