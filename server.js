@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
-const connectDB = require('../config/db');
+const connectDB = require('./config/db');
 const cors = require('cors');
 
 const app = express();
@@ -13,16 +13,12 @@ app.use(cors());
 app.use(morgan('dev'));
 
 // Load routes
-const authRouter = require('../as/routes/auth.route');
-const userRouter = require('../as/routes/user.route');
+const authRouter = require('./routes/auth.route');
+const userRouter = require('./routes/user.route');
 
 // Use Routes
 app.use('/api', authRouter);
 app.use('/api', userRouter);
-
-app.get('/', (req, res) => {
-  return res.send('Hey this is my API running 🥳')
-})
 
 app.use((req, res) => {
 	res.status(404).json({
