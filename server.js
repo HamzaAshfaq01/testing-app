@@ -25,7 +25,7 @@ app.use("/api", authRouter);
 app.use("/api", userRouter);
 
 app.get("/", (req, res) => {
-  return res.send("Api is working fine");
+  return res.send("Api is working fine !");
 });
 
 app.use((req, res) => {
