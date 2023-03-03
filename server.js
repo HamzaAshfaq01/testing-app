@@ -20,6 +20,10 @@ const userRouter = require('../as/routes/user.route');
 app.use('/api', authRouter);
 app.use('/api', userRouter);
 
+app.get('/', (req, res) => {
+  return res.send('Hey this is my API running 🥳')
+})
+
 app.use((req, res) => {
 	res.status(404).json({
 		success: false,
